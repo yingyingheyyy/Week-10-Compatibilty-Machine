@@ -9,6 +9,10 @@ int greenLED = 8;
 void setup() {
   // initialize serial communication at 9600 bits per second:
   Serial.begin(9600);
+  pinMode(leftSensor,INPUT);
+  pinMode(rightSensor,INPUT);
+  pinMode(redLED,OUTPUT);
+  pinMode(greenLED,OUTPUT);
 }
 
 void loop() {
@@ -26,12 +30,11 @@ void loop() {
  if (leftsensorValue < rightsensorValue){
   digitalWrite(10,HIGH);
   }
-
  if (leftsensorValue > rightsensorValue){
   digitalWrite(8,HIGH);
   }
   // delay in between digitalWrite so we can see the lights switching.
-  delay(300); 
+  delay(800); 
 }
 
     
